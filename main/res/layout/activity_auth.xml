@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_color"
+    android:orientation="vertical"
+    tools:context=".AuthActivity">
+
+    <!--TODO:
+    Не хардкодь значення. Усі значення числові тримаються у dimens.-->
+    <!--TODO:
+    Назва кожного елементи починається з того, яким типом він являється. Наприклад
+    tv_start_sing_up_caption or text_view_start_sing_up_caption.
+    Це стосується всіх 4-ех лейаутів.-->
+
+    <TextView
+        android:id="@+id/start_sing_up_caption"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="88dp"
+        android:fontFamily="@font/opensans"
+        android:text="@string/sing_up_text"
+        android:textColor="@color/white2"
+        android:textSize="@dimen/text_24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--TODO: Кольори краще тримати в темах, а не створювати два різних ресурси з кольорами.-->
+    <!--TODO: Що робить backgroundTint?-->
+
+    <!--TODO:
+    Чорна лінія не чорна у макеті. Краще зробити того кольору, що в макеті.
+    Це стосується й горизонтальної орієнтації-->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/mail_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        android:backgroundTint="@null"
+        android:hint="@string/e_mail_caption"
+        android:textColorHint="@color/gray4"
+        app:boxBackgroundColor="@color/background_color"
+        app:boxStrokeColor="@color/gray4"
+        app:helperTextTextColor="@color/red"
+        app:hintTextColor="@color/gray4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/caption_auth2">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/mail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@null"
+            android:inputType="textEmailAddress"
+            android:singleLine="true"
+            android:textColor="@color/gray4"
+            android:textColorHint="@color/gray4" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/password_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        android:hint="@string/password_caption"
+        android:textColorHint="@color/gray4"
+        app:boxBackgroundColor="@color/background_color"
+        app:boxStrokeColor="@color/gray4"
+        app:hintTextColor="@color/gray4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mail_layout">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:maxLength="8"
+            android:singleLine="true"
+            android:textColor="@color/gray4"
+            android:textColorHint="@color/gray4" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <CheckBox
+        android:id="@+id/save_pwd_checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/opensans"
+        android:text="@string/remember_me_text"
+        android:textColor="@color/gray2"
+        android:textSize="@dimen/text_14sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/password_layout" />
+
+    <!--TODO: Елементи краще попорядку розташовувати.-->
+    <!--TODO: Що робить layout_constraintHorizontal_bias, може краще видалити?-->
+    <TextView
+        android:id="@+id/caption_auth2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/info_text"
+        android:textColor="@color/white2"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="@+id/start_sing_up_caption"
+        app:layout_constraintHorizontal_bias="0.545"
+        app:layout_constraintStart_toStartOf="@+id/start_sing_up_caption"
+        app:layout_constraintTop_toBottomOf="@+id/start_sing_up_caption" />
+
+    <TextView
+        android:id="@+id/text_or"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/opensans"
+        android:text="@string/or_text"
+        android:textColor="@color/white2"
+        android:textSize="@dimen/text_18sp"
+        app:layout_constraintEnd_toEndOf="@+id/google_auth"
+        app:layout_constraintStart_toStartOf="@+id/google_auth"
+        app:layout_constraintTop_toBottomOf="@+id/google_auth"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/register_btn"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/registry_height"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:backgroundTint="#00000000"
+        android:fontFamily="@font/opensans"
+        android:onClick="onClickRegistration"
+        android:stateListAnimator="@null"
+        android:text="@string/register_text"
+        android:textColor="@color/white2"
+        android:textSize="@dimen/text_16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_or"
+        app:strokeColor="@color/btn_color"
+        app:strokeWidth="@dimen/stroke_width" />
+
+    <!--TODO:    Знову layout_constraintHorizontal_bias.-->
+    <Button
+        android:id="@+id/google_auth"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="16dp"
+        android:backgroundTint="@color/white2"
+        android:drawableLeft="@drawable/google_logo"
+        android:fontFamily="@font/opensans"
+        android:stateListAnimator="@null"
+        android:text="@string/google_text"
+        android:textColor="@color/gray"
+        android:textSize="@dimen/text_16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/save_pwd_checkbox" />
+
+    <!--TODO: І знову layout_constraintHorizontal_bias.-->
+    <TextView
+        android:id="@+id/caption_under_reg_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/bottom_text"
+        android:textColor="@color/white2"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="@+id/register_btn"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="@+id/register_btn"
+        app:layout_constraintTop_toBottomOf="@+id/register_btn" />
+
+    <TextView
+        android:id="@+id/singIn_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="12dp"
+        android:text="@string/sign_in_caption"
+        android:textColor="@color/white2"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/text_already_acc"
+        app:layout_constraintTop_toBottomOf="@+id/caption_under_reg_btn" />
+
+    <TextView
+        android:id="@+id/text_already_acc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="12dp"
+        android:text="@string/ask_account_caption"
+        android:textColor="@color/gray2"
+        android:textSize="@dimen/text_14sp"
+        app:layout_constraintStart_toStartOf="@+id/caption_under_reg_btn"
+        app:layout_constraintTop_toBottomOf="@+id/caption_under_reg_btn" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
