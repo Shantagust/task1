@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">shpp project</string>
+    <string name="settings_text">Налаштунки</string>
+    <string name="career_text">Кар\'єра</string>
+    <string name="user_name_text">Iм\'я Прiзвiще</string>
+    <string name="view_my_contacts_text">Вiдобразити контакти</string>
+    <string name="edit_profile_text">Редагування профiлю</string>
+    <string name="home_address_text">Домашня адреса</string>
+    <string name="text_under_profile_container">Перейдiть до налаштування и заповнiть Ваш профiль</string>
+    <string name="voice_message_contentDescription">Аватарка</string>
+    <string name="password_caption">Пароль</string>
+    <string name="e_mail_caption">Е-мейл</string>
+    <string name="sing_up_text">"Давай знайомитись "</string>
+    <string name="info_text">Заповнюйте профіль і переходьте до заявки!</string>
+    <string name="remember_me_text">Запам\'ятати данi</string>
+    <string name="or_text">або</string>
+    <string name="register_text">ЗАРЕЄСТРУВАТИСЯ</string>
+    <string name="bottom_text">Натиснувши «Реєстрація», ви погоджуєтеся з нашими Умовами</string>
+    <string name="sign_in_caption">Авторизуватись</string>
+    <string name="ask_account_caption">Вже є аккаунт?</string>
+</resources>
