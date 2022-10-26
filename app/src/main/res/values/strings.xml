@@ -3,20 +3,28 @@
     <string name="settings_text">Settings</string>
     <string name="career_text">Career</string>
     <string name="user_name_text">NAME SONAME</string>
-    <string name="view_my_contacts_text">VIEW MY CONTACTS</string>
+    <string name="view_my_contacts_text">view my contacts</string>
     <string name="edit_profile_text">Edit profile</string>
     <string name="home_address_text">Home address</string>
     <string name="text_under_profile_container">Go to settings and fill out the profile</string>
-    <string name="voice_message_contentDescription">PROGRAM_IMAGE</string>
+    <string name="voice_message_contentDescription">program_image</string>
     <string name="password_caption">Password</string>
     <string name="e_mail_caption">E-mail</string>
     <string name="sing_up_text">Let\'s get acquainted</string>
     <string name="info_text">Fill out the profile and go to the application!</string>
     <string name="remember_me_text">Remember Me</string>
     <string name="or_text">or</string>
-    <string name="register_text">REGISTER</string>
-    <string name="google_text" translatable="false">GOOGLE</string>
-    <string name="bottom_text">By clicking Register you agree to our Terms and Conditions</string>
+    <string name="register_text">register</string>
+    <string name="google_text" translatable="false">google</string>
+    <string name="bottom_text">By clicking Register you agree to our Terms and Conditions</string>
     <string name="sign_in_caption">Sign in</string>
     <string name="ask_account_caption">Already have an account?</string>
+    <string name="vk_link">vk_link</string>
+    <string name="in_link">in_link</string>
+    <string name="fb_link">fb_link</string>
+    <string name="instagram_image_description">instagram image</string>
+    <string name="in_image_description">in_image</string>
+    <string name="fb_image_description">fb_image</string>
+    <string name="wrong_mail">Wrong mail, check correct input your mail</string>
+    <string name="wrong_password">"Wrong password, password length must be 6 or greater and must contains '@' or '$'"</string>
 </resources>

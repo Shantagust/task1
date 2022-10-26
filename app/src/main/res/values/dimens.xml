@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="text_14sp">14sp</dimen>
-    <dimen name="text_16sp">16sp</dimen>
-    <dimen name="text_18sp">18sp</dimen>
-    <dimen name="text_24sp">24sp</dimen>
+    <dimen name="mega_small_text">12sp</dimen>
+    <dimen name="extra_small_text">14sp</dimen>
+    <dimen name="small_text">16sp</dimen>
+    <dimen name="text">18sp</dimen>
+    <dimen name="large_text">24sp</dimen>
     <dimen name="avatar_width">100dp</dimen>
     <dimen name="avatar_height">100dp</dimen>
     <dimen name="text_field_width">420dp</dimen>
@@ -12,4 +13,21 @@
     <dimen name="registry_height">66dp</dimen>
     <dimen name="pwd_checkbox_width">150dp</dimen>
     <dimen name="pwd_checkbox_height">36dp</dimen>
+    <dimen name="vertical_theme_btn_width">380dp</dimen>
+    <dimen name="vertical_theme_btn_height">60dp</dimen>
+    <dimen name="btn_stroke_width">2sp</dimen>
+    <dimen name="extra_small_margin">4dp</dimen>
+    <dimen name="small_margin_size">8dp</dimen>
+    <dimen name="vertical_theme_margin_elements">16dp</dimen>
+    <dimen name="middle_margin_size">24dp</dimen>
+    <dimen name="large_margin">60dp</dimen>
+    <dimen name="vertical_theme_avatar_top_margin">80dp</dimen>
+    <dimen name="horizontal_btn_width">230dp</dimen>
+    <dimen name="horizontal_btn_height">55dp</dimen>
+    <dimen name="horizontal_avatar_width">96dp</dimen>
+    <dimen name="horizontal_avatar_height">96dp</dimen>
+    <dimen name="horizontal_avatar_margin_top">50dp</dimen>
+    <dimen name="left_margin_name_text_profile">28dp</dimen>
+    <dimen name="horizontal_margin_top_name">60dp</dimen>
+    <dimen name="horizontal_left_margin_avatar">316dp</dimen>
 </resources>

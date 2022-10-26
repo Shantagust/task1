@@ -10,128 +10,100 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
         android:layout_width="0dp"
-        android:layout_height="160dp"
+        android:layout_height="0dp"
         android:background="@color/background_color"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/guideline2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:id="@+id/Settings_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginStart="@dimen/vertical_theme_margin_elements"
+            android:layout_marginTop="@dimen/vertical_theme_margin_elements"
             android:fontFamily="@font/opensans"
             android:text="@string/settings_text"
             android:textColor="@color/white2"
-            android:textSize="@dimen/text_24sp"
+            android:textSize="@dimen/large_text"
             android:textStyle="normal"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:ignore="MissingConstraints" />
 
-        <TextView
-            android:id="@+id/home_address"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:fontFamily="@font/opensans"
-            android:text="@string/home_address_text"
-            android:textColor="#B2B2B3"
-            app:layout_constraintEnd_toEndOf="@+id/career"
-            app:layout_constraintStart_toStartOf="@+id/career"
-            app:layout_constraintTop_toBottomOf="@+id/career"
-            tools:ignore="MissingConstraints" />
-
         <!-- Circle avatar -->
+
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/profile_image"
-            android:layout_width="96dp"
-            android:layout_height="96dp"
-            android:layout_marginStart="316dp"
-            android:layout_marginTop="32dp"
+            android:layout_width="@dimen/horizontal_avatar_width"
+            android:layout_height="@dimen/horizontal_avatar_height"
+            android:layout_marginStart="@dimen/horizontal_left_margin_avatar"
+            android:layout_marginTop="@dimen/horizontal_avatar_margin_top"
             android:src="@drawable/user_avatar"
             app:civ_border_color="@color/background_color"
-            app:civ_border_width="2dp"
+            app:civ_border_width="@dimen/stroke_width"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/user_avatar"
             tools:ignore="MissingConstraints" />
 
         <TextView
+            android:id="@+id/user_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/left_margin_name_text_profile"
+            android:layout_marginTop="@dimen/horizontal_margin_top_name"
+            android:fontFamily="@font/opensans"
+            android:text="@string/user_name_text"
+            android:textColor="@color/white2"
+            android:textSize="@dimen/text"
+            app:layout_constraintStart_toEndOf="@+id/profile_image"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
             android:id="@+id/career"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
+            android:layout_marginTop="@dimen/extra_small_margin"
             android:fontFamily="@font/opensans"
             android:text="@string/career_text"
             android:textColor="#B2B2B3"
-            android:textSize="@dimen/text_14sp"
+            android:textSize="@dimen/extra_small_text"
             app:layout_constraintEnd_toEndOf="@+id/user_name"
-            app:layout_constraintHorizontal_bias="0.494"
+            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="@+id/user_name"
             app:layout_constraintTop_toBottomOf="@+id/user_name"
             tools:ignore="MissingConstraints" />
 
         <TextView
-            android:id="@+id/user_name"
+            android:id="@+id/home_address"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="@dimen/extra_small_margin"
             android:fontFamily="@font/opensans"
-            android:text="@string/user_name_text"
-            android:textColor="@color/white2"
-            android:textSize="@dimen/text_18sp"
-            app:layout_constraintStart_toEndOf="@+id/profile_image"
-            app:layout_constraintTop_toTopOf="parent"
+            android:text="@string/home_address_text"
+            android:textColor="@color/gray2"
+            app:layout_constraintEnd_toEndOf="@+id/career"
+            app:layout_constraintStart_toStartOf="@+id/career"
+            app:layout_constraintTop_toBottomOf="@+id/career"
             tools:ignore="MissingConstraints" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <Button
-        android:id="@+id/view_contacts_btn"
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="40dp"
-        android:backgroundTint="@color/btn_color"
-        android:fontFamily="@font/opensans"
-        android:text="@string/view_my_contacts_text"
-        android:textSize="@dimen/text_16sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.95"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/in_circle_img" />
-
-    <Button
-        android:id="@+id/edit_profile_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="4dp"
-        android:backgroundTint="#00000000"
-        android:fontFamily="@font/opensans"
-        android:stateListAnimator="@null"
-        android:text="@string/edit_profile_text"
-        android:textColor="@color/gray"
-        android:textSize="@dimen/text_14sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.187"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/in_circle_img"
-        app:strokeColor="@color/background_color"
-        app:strokeWidth="2sp" />
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.5" />
 
     <TextView
         android:id="@+id/text_under_container"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/vertical_theme_margin_elements"
         android:fontFamily="@font/opensans"
         android:text="@string/text_under_profile_container"
         android:textColor="@color/background_color"
@@ -140,70 +112,83 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
 
-    <ImageView
-        android:id="@+id/in_circle_img"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:contentDescription="@string/voice_message_contentDescription"
+        android:layout_marginTop="@dimen/vertical_theme_margin_elements"
+        android:gravity="center"
+        android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.506"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
-        app:srcCompat="@drawable/orange_circle" />
+        app:layout_constraintTop_toBottomOf="@+id/text_under_container"
+        app:layout_constraintWidth_percent="0.5">
 
-    <ImageView
-        android:id="@+id/fb_circle_img"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="32dp"
-        android:background="@null"
-        android:contentDescription="@string/voice_message_contentDescription"
-        app:layout_constraintEnd_toStartOf="@+id/in_circle_img"
-        app:layout_constraintTop_toTopOf="@+id/in_circle_img"
-        app:srcCompat="@drawable/orange_circle" />
+        <ImageView
+            android:id="@+id/img_fb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/fb_circle_logo"
+            android:contentDescription="@string/fb_image_description" />
 
-    <ImageView
-        android:id="@+id/vk_circle_img"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:contentDescription="@string/voice_message_contentDescription"
-        app:layout_constraintStart_toEndOf="@+id/in_circle_img"
-        app:layout_constraintTop_toTopOf="@+id/in_circle_img"
-        app:srcCompat="@drawable/orange_circle" />
+        <ImageView
+            android:id="@+id/img_in"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/in_circle_logo"
+            android:contentDescription="@string/in_image_description" />
 
-    <ImageView
-        android:id="@+id/facebook_logo_img"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:contentDescription="@string/voice_message_contentDescription"
-        app:layout_constraintBottom_toBottomOf="@+id/fb_circle_img"
-        app:layout_constraintEnd_toEndOf="@+id/fb_circle_img"
-        app:layout_constraintStart_toStartOf="@+id/fb_circle_img"
-        app:layout_constraintTop_toTopOf="@+id/fb_circle_img"
-        app:srcCompat="@drawable/facebook_logo" />
+        <ImageView
+            android:id="@+id/img_ints"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/inst_circle_logo"
+            android:contentDescription="@string/instagram_image_description" />
 
-    <ImageView
-        android:id="@+id/in_logo_img"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:contentDescription="@string/voice_message_contentDescription"
-        app:layout_constraintBottom_toBottomOf="@+id/in_circle_img"
-        app:layout_constraintEnd_toEndOf="@+id/in_circle_img"
-        app:layout_constraintStart_toStartOf="@+id/in_circle_img"
-        app:layout_constraintTop_toTopOf="@+id/in_circle_img"
-        app:srcCompat="@drawable/in_logo" />
+    </LinearLayout>
 
-    <ImageView
-        android:id="@+id/vk_logo_img"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:id="@+id/horizontal_btn_linear"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:contentDescription="@string/voice_message_contentDescription"
-        app:layout_constraintBottom_toBottomOf="@+id/vk_circle_img"
-        app:layout_constraintEnd_toEndOf="@+id/vk_circle_img"
-        app:layout_constraintStart_toStartOf="@+id/vk_circle_img"
-        app:layout_constraintTop_toTopOf="@+id/vk_circle_img"
-        app:srcCompat="@drawable/vk_logo" />
+        android:layout_marginTop="@dimen/vertical_theme_margin_elements"
+        android:divider="@drawable/devider"
+        android:gravity="center|center_horizontal|center_vertical"
+        android:orientation="horizontal"
+        android:showDividers="middle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        app:layout_constraintWidth_percent="0.8">
+
+        <Button
+            android:id="@+id/edit_profile_btn"
+            android:layout_width="@dimen/horizontal_btn_width"
+            android:layout_height="@dimen/horizontal_btn_height"
+            android:backgroundTint="#00000000"
+            android:fontFamily="@font/opensans"
+            android:stateListAnimator="@null"
+            android:text="@string/edit_profile_text"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/extra_small_text"
+            android:textStyle="bold"
+            app:strokeColor="@color/background_color"
+            app:strokeWidth="@dimen/stroke_width"
+            tools:ignore="MissingConstraints" />
+
+        <Button
+            android:id="@+id/view_contacts_btn"
+            android:layout_width="@dimen/horizontal_btn_width"
+            android:layout_height="@dimen/horizontal_btn_height"
+            android:backgroundTint="@color/btn_color"
+            android:fontFamily="@font/opensans"
+            android:text="@string/view_my_contacts_text"
+            android:textSize="@dimen/small_text"
+            android:textStyle="bold"
+            tools:ignore="MissingConstraints" />
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

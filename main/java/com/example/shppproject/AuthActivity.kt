@@ -5,7 +5,6 @@ import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.View
-/*TODO: Сіре видалити :)*/
 import android.view.Window
 import androidx.appcompat.app.AppCompatActivity
 import com.example.shppproject.databinding.ActivityAuthBinding
@@ -32,7 +31,6 @@ class AuthActivity : AppCompatActivity() {
         val saved: Boolean = shPref.getBoolean("saved", false)
 
         binding.registerBtn.setOnClickListener {
-     /*       TODO: implement me*/
         }
         binding.mail.setText(mail)
         binding.password.setText(password)
@@ -47,13 +45,9 @@ class AuthActivity : AppCompatActivity() {
     // parse user name from user mail
     private fun parseName(data: Intent) {
         // get full user name (unparsed)
-        /*TODO: Якщо немає крапки в емейлі - крашиться, а не видає помилку. Краще виправити.*/
-        /*TODO: Застарілі методи краще не використовувати.*/
         val full_name = binding.mail.text!!.split("@").first().toString().split(".")
         data.putExtra("name", "${full_name[0].capitalize()} ${full_name[1].capitalize()}")
     }
-
-    /*TODO: А нашо він приймає віюшку, якщо не юзає потім?*/
 
     // listener for clicking of "registration" button in auth activity
     fun onClickRegistration(view: View) {
