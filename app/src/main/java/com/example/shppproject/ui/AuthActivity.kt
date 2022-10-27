@@ -39,7 +39,7 @@ class AuthActivity : AppCompatActivity() {
     }
 
     private fun checkAuth() {
-        val dataIntent = Intent(this, MainActivity::class.java)
+        val dataIntent = Intent(this, MyProfileActivity::class.java)
 
         with(binding) {
             btnRegister.setOnClickListener {
