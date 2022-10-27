@@ -30,7 +30,7 @@
             android:textSize="@dimen/large_text"
             android:textStyle="normal"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+            app:layout_constraintTop_toTopOf="parent" />
 
         <!-- Circle avatar -->
         <de.hdodenhof.circleimageview.CircleImageView
@@ -43,7 +43,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/user_avatar"/>
+            app:srcCompat="@drawable/user_avatar" />
 
         <TextView
             android:id="@+id/user_name"
@@ -55,9 +55,8 @@
             android:textColor="@color/white2"
             android:textSize="@dimen/text"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/profile_image"/>
+            app:layout_constraintTop_toBottomOf="@+id/profile_image" />
 
         <TextView
             android:id="@+id/career"
@@ -69,9 +68,8 @@
             android:textColor="@color/gray2"
             android:textSize="@dimen/extra_small_text"
             app:layout_constraintEnd_toEndOf="@+id/user_name"
-            app:layout_constraintHorizontal_bias="0.494"
             app:layout_constraintStart_toStartOf="@+id/user_name"
-            app:layout_constraintTop_toBottomOf="@+id/user_name"/>
+            app:layout_constraintTop_toBottomOf="@+id/user_name" />
 
         <TextView
             android:id="@+id/home_address"
@@ -83,7 +81,7 @@
             android:textColor="@color/gray2"
             app:layout_constraintEnd_toEndOf="@+id/career"
             app:layout_constraintStart_toStartOf="@+id/career"
-            app:layout_constraintTop_toBottomOf="@+id/career"/>
+            app:layout_constraintTop_toBottomOf="@+id/career" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -126,7 +124,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:contentDescription="@string/vk_link"
+            android:contentDescription="@string/inst_link"
             app:srcCompat="@drawable/inst_circle_logo" />
     </LinearLayout>
 
@@ -150,17 +148,19 @@
         android:layout_marginBottom="@dimen/small_margin_size"
         android:backgroundTint="@color/white"
         android:fontFamily="@font/opensans"
+        android:inputType="textCapSentences"
         android:stateListAnimator="@null"
         android:text="@string/edit_profile_text"
+        android:textAllCaps="false"
         android:textColor="@color/gray"
         android:textSize="@dimen/extra_small_text"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/view_contacts_btn"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:strokeColor="@color/background_color"
-        app:strokeWidth="@dimen/btn_stroke_width" />
+        app:strokeWidth="@dimen/btn_stroke_width"
+        tools:ignore="TextViewEdits" />
 
     <Button
         android:id="@+id/view_contacts_btn"
@@ -174,7 +174,6 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

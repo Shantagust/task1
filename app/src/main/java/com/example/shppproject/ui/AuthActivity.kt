@@ -14,13 +14,13 @@ class AuthActivity : AppCompatActivity() {
     lateinit var binding: ActivityAuthBinding
     lateinit var shPref: SharedPreferences
     lateinit var validator: Validators
-    lateinit var dataIntent: Intent
     lateinit var storage: DataStorage
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityAuthBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
         init()
         checkAuth()
     }
@@ -30,26 +30,32 @@ class AuthActivity : AppCompatActivity() {
         shPref = getSharedPreferences("myApp", Context.MODE_PRIVATE)
         validator = Validators()
         storage = DataStorage()
-        binding.mail.setText(shPref.getString("mail", null))
-        binding.password.setText(shPref.getString("password", null))
-        binding.savePwdCheckbox.isChecked = shPref.getBoolean("saved", false)
-        dataIntent = Intent(this, MainActivity::class.java)
+
+        with(binding) {
+            mail.setText(shPref.getString("mail", null))
+            password.setText(shPref.getString("password", null))
+            savePwdCheckbox.isChecked = shPref.getBoolean("saved", false)
+        }
     }
 
     private fun checkAuth() {
-        binding.btnRegister.setOnClickListener {
-            if (validator.isMailCorrect(binding.mail.text.toString())) {
-                binding.mailLayout.helperText = ""
-                if (validator.isPasswordCorrect(binding.password.text.toString())) {
-                    binding.passwordLayout.helperText
-                    dataIntent.putExtra("mail", binding.mail.text.toString())
-                    isCheckedCheckbox()
-                    startActivity(dataIntent)
-                } else {
-                    binding.passwordLayout.helperText = resources.getString(R.string.wrong_password)
-                }
-            } else binding.mailLayout.helperText = resources.getString(R.string.wrong_mail)
+        val dataIntent = Intent(this, MainActivity::class.java)
+
+        with(binding) {
+            btnRegister.setOnClickListener {
+                if (validator.isMailCorrect(mail.text.toString())) {
+                    mailLayout.helperText = ""
+                    if (validator.isPasswordCorrect(password.text.toString())) {
+                        passwordLayout.helperText = ""
+
+                        dataIntent.putExtra("mail", mail.text.toString())
+                        isCheckedCheckbox()
+                        startActivity(dataIntent)
+                    } else passwordLayout.helperText = resources.getString(R.string.wrong_password)
+                } else mailLayout.helperText = resources.getString(R.string.wrong_mail)
+            }
         }
+
     }
 
     private fun isCheckedCheckbox() {

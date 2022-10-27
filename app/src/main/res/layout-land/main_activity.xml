@@ -72,7 +72,6 @@
             android:textColor="#B2B2B3"
             android:textSize="@dimen/extra_small_text"
             app:layout_constraintEnd_toEndOf="@+id/user_name"
-            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="@+id/user_name"
             app:layout_constraintTop_toBottomOf="@+id/user_name"
             tools:ignore="MissingConstraints" />
@@ -175,9 +174,10 @@
             android:textColor="@color/gray"
             android:textSize="@dimen/extra_small_text"
             android:textStyle="bold"
+            android:inputType="textCapSentences"
             app:strokeColor="@color/background_color"
             app:strokeWidth="@dimen/stroke_width"
-            tools:ignore="MissingConstraints" />
+            tools:ignore="MissingConstraints,TextViewEdits" />
 
         <Button
             android:id="@+id/view_contacts_btn"

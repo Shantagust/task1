@@ -36,9 +36,8 @@
         android:text="@string/info_text"
         android:textColor="@color/white2"
         android:textSize="@dimen/extra_small_text"
-        app:layout_constraintEnd_toEndOf="@+id/start_sing_up_caption"
-        app:layout_constraintHorizontal_bias="0.545"
-        app:layout_constraintStart_toStartOf="@+id/start_sing_up_caption"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/start_sing_up_caption" />
 
     <com.google.android.material.textfield.TextInputLayout

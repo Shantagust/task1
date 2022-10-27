@@ -22,7 +22,7 @@
     <dimen name="middle_margin_size">24dp</dimen>
     <dimen name="large_margin">60dp</dimen>
     <dimen name="vertical_theme_avatar_top_margin">80dp</dimen>
-    <dimen name="horizontal_btn_width">230dp</dimen>
+    <dimen name="horizontal_btn_width">280dp</dimen>
     <dimen name="horizontal_btn_height">55dp</dimen>
     <dimen name="horizontal_avatar_width">96dp</dimen>
     <dimen name="horizontal_avatar_height">96dp</dimen>
