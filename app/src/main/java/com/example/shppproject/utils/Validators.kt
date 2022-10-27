@@ -1,7 +1,5 @@
 package com.example.shppproject.utils
 
-import com.google.android.material.textfield.TextInputEditText
-
 class Validators {
 
     fun isMailCorrect(mail: String): Boolean {
