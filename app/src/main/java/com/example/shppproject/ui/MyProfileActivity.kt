@@ -18,5 +18,4 @@ class MyProfileActivity : AppCompatActivity() {
         val (name, soname) = Parser().parseName(intent.getStringExtra("mail"))
         binding.userName.text = "$name $soname"
     }
-
 }

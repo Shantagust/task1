@@ -7,6 +7,10 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.shppproject.R
 import com.example.shppproject.databinding.ActivityAuthBinding
+import com.example.shppproject.utils.Constants.APP_NAME
+import com.example.shppproject.utils.Constants.SAVED_STATUS
+import com.example.shppproject.utils.Constants.USER_MAIL
+import com.example.shppproject.utils.Constants.USER_PASSWORD
 import com.example.shppproject.utils.DataStorage
 import com.example.shppproject.utils.Validators
 
@@ -27,14 +31,14 @@ class AuthActivity : AppCompatActivity() {
 
     // try init data from SharedPreference or load default values
     private fun init() {
-        shPref = getSharedPreferences("myApp", Context.MODE_PRIVATE)
+        shPref = getSharedPreferences(APP_NAME, Context.MODE_PRIVATE)
         validator = Validators()
         storage = DataStorage()
 
         with(binding) {
-            mail.setText(shPref.getString("mail", null))
-            password.setText(shPref.getString("password", null))
-            savePwdCheckbox.isChecked = shPref.getBoolean("saved", false)
+            mail.setText(shPref.getString(USER_MAIL, null))
+            password.setText(shPref.getString(USER_PASSWORD, null))
+            savePwdCheckbox.isChecked = shPref.getBoolean(SAVED_STATUS, false)
         }
     }
 
@@ -48,7 +52,7 @@ class AuthActivity : AppCompatActivity() {
                     if (validator.isPasswordCorrect(password.text.toString())) {
                         passwordLayout.helperText = ""
 
-                        dataIntent.putExtra("mail", mail.text.toString())
+                        dataIntent.putExtra(USER_MAIL, mail.text.toString())
                         isCheckedCheckbox()
                         startActivity(dataIntent)
                     } else passwordLayout.helperText = resources.getString(R.string.wrong_password)
