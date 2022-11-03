@@ -26,48 +26,51 @@ class AuthActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         init()
-        checkAuth()
+        initialRegistrationButton()
     }
 
     // try init data from SharedPreference or load default values
-    private fun init() {
+    private fun init() = with(binding) {
+        variableInit()
+        mail.setText(shPref.getString(USER_MAIL, null))
+        password.setText(shPref.getString(USER_PASSWORD, null))
+        savePwdCheckbox.isChecked = shPref.getBoolean(SAVED_STATUS, false)
+    }
+
+    private fun variableInit() {
         shPref = getSharedPreferences(APP_NAME, Context.MODE_PRIVATE)
         validator = Validators()
         storage = DataStorage()
-
-        with(binding) {
-            mail.setText(shPref.getString(USER_MAIL, null))
-            password.setText(shPref.getString(USER_PASSWORD, null))
-            savePwdCheckbox.isChecked = shPref.getBoolean(SAVED_STATUS, false)
-        }
     }
 
-    private fun checkAuth() {
-        val dataIntent = Intent(this, MyProfileActivity::class.java)
-
+    private fun initialRegistrationButton() {
         with(binding) {
             btnRegister.setOnClickListener {
-                if (validator.isMailCorrect(mail.text.toString())) {
-                    mailLayout.helperText = ""
-                    if (validator.isPasswordCorrect(password.text.toString())) {
-                        passwordLayout.helperText = ""
-
-                        dataIntent.putExtra(USER_MAIL, mail.text.toString())
-                        isCheckedCheckbox()
-                        startActivity(dataIntent)
-                    } else passwordLayout.helperText = resources.getString(R.string.wrong_password)
-                } else mailLayout.helperText = resources.getString(R.string.wrong_mail)
+                checkAuth()
             }
         }
-
     }
 
-    private fun isCheckedCheckbox() {
-        if (binding.savePwdCheckbox.isChecked) {
-            storage.saveAccount(shPref, binding)
-        } else {
-            storage.clearAccountData(shPref)
-        }
+    private fun checkAuth() = with(binding) {
+        if (validator.isMailCorrect(mail.text.toString())) {
+            mailLayout.helperText = ""
+            if (validator.isPasswordCorrect(password.text.toString())) {
+                passwordLayout.helperText = ""
+                openUserProfile()
+            } else passwordLayout.helperText = getString(R.string.wrong_password)
+        } else mailLayout.helperText = getString(R.string.wrong_mail)
+    }
+
+    private fun openUserProfile() = with(binding) {
+        isSavedData()
+        val dataIntent = Intent(this@AuthActivity, MyProfileActivity::class.java)
+        dataIntent.putExtra(USER_MAIL, mail.text.toString())
+        startActivity(dataIntent)
+    }
+
+    private fun isSavedData() {
+        if (binding.savePwdCheckbox.isChecked) storage.saveAccount(shPref, binding)
+        else storage.clearAccountData(shPref)
     }
 
 }

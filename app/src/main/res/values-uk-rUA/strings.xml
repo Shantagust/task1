@@ -27,4 +27,5 @@
     <string name="fb_image_description">Зображення фейсбуку</string>
     <string name="wrong_password">Пароль має бути 6 або бiльше</string>
     <string name="wrong_mail">Не корректний Е-мейл, перевiрте правильнiсть вводу е-мейлу</string>
+    <string name="user_name_placeholder">%s %s</string>
 </resources>

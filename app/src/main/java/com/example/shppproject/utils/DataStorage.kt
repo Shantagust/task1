@@ -6,11 +6,11 @@ import com.example.shppproject.databinding.ActivityAuthBinding
 class DataStorage {
 
     // this functions saved data from mail and password fields to SharedPreferences store
-    fun saveAccount(shPref: SharedPreferences, binding: ActivityAuthBinding) {
+    fun saveAccount(shPref: SharedPreferences, binding: ActivityAuthBinding) = with(binding) {
         val editor: SharedPreferences.Editor = shPref.edit()
-        editor.putString("mail", binding.mail.text.toString())
-        editor.putString("password", binding.password.text.toString())
-        editor.putBoolean("saved", binding.savePwdCheckbox.isChecked)
+        editor.putString(Constants.USER_MAIL, mail.text.toString())
+        editor.putString(Constants.USER_PASSWORD, password.text.toString())
+        editor.putBoolean(Constants.SAVED_STATUS, savePwdCheckbox.isChecked)
         editor.apply()
     }
 

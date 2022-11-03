@@ -4,9 +4,11 @@ import java.util.*
 
 // Parsing user name from mail
 class Parser {
-    fun parseName(unParsedName: String?): Pair<String, String> {
-        var (name, soname) = unParsedName!!.split("@")?.first().toString().split(".")
+
+    fun parseName(unParsedName: String): Pair<String, String> {
+        val (name, lastname) = unParsedName.split(".")
         return Pair(name.replaceFirstChar { if (it.isLowerCase()) it.titlecase(Locale.getDefault()) else it.toString() },
-            soname.replaceFirstChar { if (it.isLowerCase()) it.titlecase(Locale.getDefault()) else it.toString() })
+            lastname.replaceFirstChar { if (it.isLowerCase()) it.titlecase(Locale.getDefault()) else it.toString() })
     }
+
 }
