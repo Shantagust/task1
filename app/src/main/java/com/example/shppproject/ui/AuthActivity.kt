@@ -43,11 +43,9 @@ class AuthActivity : AppCompatActivity() {
         storage = DataStorage()
     }
 
-    private fun initialRegistrationButton() {
-        with(binding) {
-            btnRegister.setOnClickListener {
-                checkAuth()
-            }
+    private fun initialRegistrationButton() = with(binding) {
+        btnRegister.setOnClickListener {
+            checkAuth()
         }
     }
 
