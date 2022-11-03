@@ -1,7 +1,5 @@
 package com.example.shppproject.utils
 
-import android.util.Log
-
 class Validators {
 
     fun isMailCorrect(mail: String): Boolean {
@@ -17,5 +15,4 @@ class Validators {
         return (('.' in contains) &&
                 (contains.indexOf('.') != 0 && contains.indexOf('.') != contains.length - 1))
     }
-
 }
